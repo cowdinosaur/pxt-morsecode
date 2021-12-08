@@ -1,7 +1,3 @@
-/**
- * Provides access to a morse code abstraction.
- */
-//% color=190 icon="\uf086" block="Morse Code"
 namespace morseCode {
     export enum MorseSignal {
         //% block="•"
@@ -90,9 +86,10 @@ namespace morseCode {
     //% blockSetVariable="Morse char list"
     export function stringToMorseArray(s: string): MorseSignal[][] {
         let word: MorseSignal[][] = [];
-        /*
-         const chars = [...s];
+        
+         const chars = s.split('');
          chars.forEach(function(c,i) {
+            basic.showString(c)
              switch(c) {
                  case 'A':
                  case 'a':
@@ -104,7 +101,7 @@ namespace morseCode {
                      break;
              }
            });
-           */
+           
         return word;
     }
 }
