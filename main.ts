@@ -61,14 +61,32 @@ namespace morseCode {
     export let L: MorseSignal[] = _characters.L;
     //% fixedInstance
     export let M: MorseSignal[] = _characters.M;
-
-    /**
-      * Represents a Morse signal block
-      */
-    //% color=190 block="%char"
-    export function _morseCharacter(character: MorseSignal[]): MorseSignal[] {
-        return character;
-    }
+    //% fixedInstance
+    export let N: MorseSignal[] = _characters.N;
+    //% fixedInstance
+    export let O: MorseSignal[] = _characters.O;
+    //% fixedInstance
+    export let P: MorseSignal[] = _characters.P;
+    //% fixedInstance
+    export let Q: MorseSignal[] = _characters.Q;
+    //% fixedInstance
+    export let R: MorseSignal[] = _characters.R;
+    //% fixedInstance
+    export let S: MorseSignal[] = _characters.S;
+    //% fixedInstance
+    export let T: MorseSignal[] = _characters.T;
+    //% fixedInstance
+    export let U: MorseSignal[] = _characters.U;
+    //% fixedInstance
+    export let V: MorseSignal[] = _characters.V;
+    //% fixedInstance
+    export let W: MorseSignal[] = _characters.W;
+    //% fixedInstance
+    export let X: MorseSignal[] = _characters.X;
+    //% fixedInstance
+    export let Y: MorseSignal[] = _characters.Y;
+    //% fixedInstance
+    export let Z: MorseSignal[] = _characters.Z;
 
 
     /**
@@ -87,20 +105,115 @@ namespace morseCode {
     export function stringToMorseArray(s: string): MorseSignal[][] {
         let word: MorseSignal[][] = [];
         
-         const chars = s.split('');
-         chars.forEach(function(c,i) {
-            basic.showString(c)
-             switch(c) {
-                 case 'A':
-                 case 'a':
-                     word.push(A);
-                     break;
-                 case 'B':
-                 case 'b': 
-                     word.push(B);
-                     break;
-             }
-           });
+        const chars = s.split('');
+        chars.forEach(function(c,i) {
+            switch(c) {
+                case 'A':
+                case 'a':
+                    word.push(A);
+                    break;
+                case 'B':
+                case 'b': 
+                    word.push(B);
+                    break;
+                case 'C':
+                case 'c':
+                    word.push(C);
+                    break;
+                case 'D':
+                case 'd':
+                    word.push(D);
+                    break;
+                case 'E':
+                case 'e':
+                    word.push(E);
+                    break;
+                case 'F':
+                case 'f':
+                    word.push(F);
+                    break;
+                case 'G':
+                case 'g':
+                    word.push(G);
+                    break;
+                case 'H':
+                case 'h':
+                    word.push(H);
+                    break;
+                case 'I':
+                case 'i':
+                    word.push(I);
+                    break;
+                case 'J':
+                case 'j':
+                    word.push(J);
+                    break;
+                case 'K':
+                case 'k':
+                    word.push(K);
+                    break;
+                case 'L':
+                case 'l':
+                    word.push(L);
+                    break;
+                case 'M':
+                case 'm':
+                    word.push(M);
+                    break;
+                case 'N':
+                case 'n':
+                    word.push(N);
+                    break;
+                case 'O':
+                case 'o':
+                    word.push(O);
+                    break;
+                case 'P':
+                case 'p':
+                    word.push(P);
+                    break;
+                case 'Q':
+                case 'q':
+                    word.push(Q);
+                    break;
+                case 'R':
+                case 'r':
+                    word.push(R);
+                    break;
+                case 'S':
+                case 's':
+                    word.push(S);
+                    break;
+                case 'T':
+                case 't':
+                    word.push(T);
+                    break;
+                case 'U':
+                case 'u':
+                    word.push(U);
+                    break;
+                case 'V':
+                case 'v':
+                    word.push(V);
+                    break;
+                case 'W':
+                case 'w':
+                    word.push(W);
+                    break;
+                case 'X':
+                case 'x':
+                    word.push(X);
+                    break;
+                case 'Y':
+                case 'y':
+                    word.push(Y);
+                    break;
+                case 'Z':
+                case 'z':
+                    word.push(Z);
+                    break;
+            }
+        });
            
         return word;
     }
