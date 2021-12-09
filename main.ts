@@ -99,8 +99,10 @@ namespace morseCode {
     /**
      * Get a Morse character
      */
-    //% color=190 block="Morse Character %char"
-    export function _get(char: MorseCharacter): MorseSignal[] {
+    //% color=190 block="Morse Character %mchar"
+    //% mchar.defl=MorseCharacter.A
+
+    export function _get(mchar: MorseCharacter): MorseSignal[] {
         return _characters.Z;
     }
 
