@@ -6,6 +6,7 @@ namespace morseCode {
         Dash,
     }
 
+
     const _characters = {
         A: [MorseSignal.Dot, MorseSignal.Dash],
         B: [MorseSignal.Dash, MorseSignal.Dot, MorseSignal.Dot, MorseSignal.Dot],
@@ -88,12 +89,16 @@ namespace morseCode {
     //% fixedInstance
     let Z: MorseSignal[] = _characters.Z;
 
-    //% fixedInstances
-    class MorseCharacter {
-        //%  block="char %name"
-        get(): MorseSignal[] {
-            return _characters.X
-        }
+    enum MorseCharacter {
+        A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
+    }
+
+    /**
+     * Get a Morse character
+     */
+    //% color=190 block="Morse Character %char"
+    export function _get(char: MorseCharacter): MorseSignal[] {
+        return _characters.Z;
     }
 
     /**
