@@ -36,58 +36,65 @@ namespace morseCode {
     };
 
     //% fixedInstance
-    export let A: MorseSignal[] = _characters.A;
+    let A: MorseSignal[] = _characters.A;
     //% fixedInstance
-    export let B: MorseSignal[] = _characters.B;
+    let B: MorseSignal[] = _characters.B;
     //% fixedInstance
-    export let C: MorseSignal[] = _characters.C;
+    let C: MorseSignal[] = _characters.C;
     //% fixedInstance
-    export let D: MorseSignal[] = _characters.D;
+    let D: MorseSignal[] = _characters.D;
     //% fixedInstance
-    export let E: MorseSignal[] = _characters.E;
+    let E: MorseSignal[] = _characters.E;
     //% fixedInstance
-    export let F: MorseSignal[] = _characters.F;
+    let F: MorseSignal[] = _characters.F;
     //% fixedInstance
-    export let G: MorseSignal[] = _characters.G;
+    let G: MorseSignal[] = _characters.G;
     //% fixedInstance
-    export let H: MorseSignal[] = _characters.H;
+    let H: MorseSignal[] = _characters.H;
     //% fixedInstance
-    export let I: MorseSignal[] = _characters.I;
+    let I: MorseSignal[] = _characters.I;
     //% fixedInstance
-    export let J: MorseSignal[] = _characters.J;
+    let J: MorseSignal[] = _characters.J;
     //% fixedInstance
-    export let K: MorseSignal[] = _characters.K;
+    let K: MorseSignal[] = _characters.K;
     //% fixedInstance
-    export let L: MorseSignal[] = _characters.L;
+    let L: MorseSignal[] = _characters.L;
     //% fixedInstance
-    export let M: MorseSignal[] = _characters.M;
+    let M: MorseSignal[] = _characters.M;
     //% fixedInstance
-    export let N: MorseSignal[] = _characters.N;
+    let N: MorseSignal[] = _characters.N;
     //% fixedInstance
-    export let O: MorseSignal[] = _characters.O;
+    let O: MorseSignal[] = _characters.O;
     //% fixedInstance
-    export let P: MorseSignal[] = _characters.P;
+    let P: MorseSignal[] = _characters.P;
     //% fixedInstance
-    export let Q: MorseSignal[] = _characters.Q;
+    let Q: MorseSignal[] = _characters.Q;
     //% fixedInstance
-    export let R: MorseSignal[] = _characters.R;
+    let R: MorseSignal[] = _characters.R;
     //% fixedInstance
-    export let S: MorseSignal[] = _characters.S;
+    let S: MorseSignal[] = _characters.S;
     //% fixedInstance
-    export let T: MorseSignal[] = _characters.T;
+    let T: MorseSignal[] = _characters.T;
     //% fixedInstance
-    export let U: MorseSignal[] = _characters.U;
+    let U: MorseSignal[] = _characters.U;
     //% fixedInstance
-    export let V: MorseSignal[] = _characters.V;
+    let V: MorseSignal[] = _characters.V;
     //% fixedInstance
-    export let W: MorseSignal[] = _characters.W;
+    let W: MorseSignal[] = _characters.W;
     //% fixedInstance
-    export let X: MorseSignal[] = _characters.X;
+    let X: MorseSignal[] = _characters.X;
     //% fixedInstance
-    export let Y: MorseSignal[] = _characters.Y;
+    let Y: MorseSignal[] = _characters.Y;
     //% fixedInstance
-    export let Z: MorseSignal[] = _characters.Z;
+    let Z: MorseSignal[] = _characters.Z;
 
+    //% fixedInstances
+    class MorseCharacter {
+        //%  block="char %name"
+        get(): MorseSignal[] {
+            return _characters.X
+        }
+    }
 
     /**
      * Represents a Morse signal block
