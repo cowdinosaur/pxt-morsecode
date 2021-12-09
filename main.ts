@@ -56,7 +56,7 @@ namespace morseCode {
      * Check if signal is a dash or a dot
      */
     //% color=190 block="is %s | a %compareto | ?"
-    export function isDashOrDot(s: any, compareto: MorseSignal ) : boolean {
+    export function isDashOrDot(s: Number, compareto: MorseSignal ) : boolean {
         return true
     }
     /**
