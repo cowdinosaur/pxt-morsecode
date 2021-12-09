@@ -1,18 +1,18 @@
 enum MorseCharacter {
-    //% //% blockId="MorseCharacterA" block="A"
-    A = "A",
+    //% block="A"
+    A,
     //% block="B"
-    B = "B",
+    B,
     //% block="C"
-    C = "C",
+    C,
     //% block="D"
-    D = "D",
+    D,
     //% block="E"
-    E = "E",
+    E,
     //% block="F"
-    F = "F",
+    F,
     //% block="G"
-    G = "G"
+    G
 }
 
 enum MorseSignal {
@@ -52,14 +52,20 @@ namespace morseCode {
         Z: [MorseSignal.Dash, MorseSignal.Dash, MorseSignal.Dot, MorseSignal.Dot],
     };
 
-
+    /**
+     * Check if signal is a dash or a dot
+     */
+    //% color=190 block="is %s | a %compareto | ?"
+    export function isDashOrDot(s: any, compareto: MorseSignal ) : boolean {
+        return true
+    }
     /**
      * Get a Morse character
      */
-    //% color=190 block="Morse Character %mchar"
+    //% blockId="MorseCharacterGetBlock" color=190 block="Morse %mchar"
     export function _get(mchar: MorseCharacter): MorseSignal[] {
-        // TODO check for out-of-bounds keys
-        return _characters[mchar];
+        // TODO
+        return _characters.A;
     }
 
 
@@ -76,7 +82,7 @@ namespace morseCode {
      */
     //% color=190 block="Morse word from %mchars"
     //% mchars.shadow="lists_create_with"
-    //% mchars.defl="MorseCharacterA"
+    //% mchars.defl="MorseCharacterGetBlock"
     //% blockSetVariable="Morse char list"
     export function createWordFromArrayOfChars(mchars: MorseSignal[][]): MorseSignal[][] {
         let word: MorseSignal[][] = mchars
@@ -86,20 +92,20 @@ namespace morseCode {
     /**
      * Convert a string to an array of Morse Characters
      */
-    //% color=190 block="convert %s to Morse chars"
+    //% color=190 block="convert %s to list of Morse characters"
     //% blockSetVariable="Morse char list"
     export function stringToMorseArray(s: string): MorseSignal[][] {
         let word: MorseSignal[][] = [];
-        
+
         const chars = s.split('');
-        chars.forEach(function(c,i) {
-            switch(c) {
+        chars.forEach(function (c, i) {
+            switch (c) {
                 case 'A':
                 case 'a':
                     word.push(_characters.A);
                     break;
                 case 'B':
-                case 'b': 
+                case 'b':
                     word.push(_characters.B);
                     break;
                 case 'C':
@@ -200,7 +206,19 @@ namespace morseCode {
                     break;
             }
         });
-           
+
         return word;
     }
+
+    /**
+     * Convert a string to an array of Morse Characters
+     */
+    //% color=190 block="convert %s to list of Morse signals"
+    //% s.shadow="MorseCharacterGetBlock"
+    //% blockSetVariable="Morse signal list"
+    export function MorseCharToMorseSignalArray(s: MorseSignal[]): MorseSignal[] {
+        return _characters.Z
+    }
+
+
 }
