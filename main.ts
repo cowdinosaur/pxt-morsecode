@@ -1,8 +1,18 @@
 enum MorseCharacter {
-    //% block="A"
+    //% //% blockId="MorseCharacterA" block="A"
     A = "A",
-    //% block="A"
+    //% block="B"
     B = "B",
+    //% block="C"
+    C = "C",
+    //% block="D"
+    D = "D",
+    //% block="E"
+    E = "E",
+    //% block="F"
+    F = "F",
+    //% block="G"
+    G = "G"
 }
 
 enum MorseSignal {
@@ -48,8 +58,10 @@ namespace morseCode {
      */
     //% color=190 block="Morse Character %mchar"
     export function _get(mchar: MorseCharacter): MorseSignal[] {
-        return _characters.Z;
+        // TODO check for out-of-bounds keys
+        return _characters[mchar];
     }
+
 
     /**
      * Represents a Morse signal block
@@ -60,7 +72,19 @@ namespace morseCode {
     }
 
     /**
-     * Convert a string to 
+     * Create a Morse word from an array of Morse Characters
+     */
+    //% color=190 block="Morse word from %mchars"
+    //% mchars.shadow="lists_create_with"
+    //% mchars.defl="MorseCharacterA"
+    //% blockSetVariable="Morse char list"
+    export function createWordFromArrayOfChars(mchars: MorseSignal[][]): MorseSignal[][] {
+        let word: MorseSignal[][] = mchars
+        return word;
+    }
+
+    /**
+     * Convert a string to an array of Morse Characters
      */
     //% color=190 block="convert %s to Morse chars"
     //% blockSetVariable="Morse char list"
