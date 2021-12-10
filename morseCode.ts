@@ -314,6 +314,7 @@ namespace morseCode {
     //% color=190 block="convert %s to list of Morse signals"
     //% s.shadow="MorseCharacterGetBlock"
     //% blockSetVariable="Morse signal list"
+    //% group="Morse signal"
     export function MorseCharToMorseSignalArray(s: MorseSignal[]): MorseSignal[] {
         return s
     }
