@@ -12,9 +12,46 @@ enum MorseCharacter {
     //% block="F"
     F,
     //% block="G"
-    G
+    G,
+    //% block="H"
+    H,
+    //% block="I"
+    I,
+    //% block="J"
+    J,
+    //% block="K"
+    K,
+    //% block="L"
+    L,
+    //% block="M"
+    M,
+    //% block="N"
+    N,
+    //% block="O"
+    O,
+    //% block="P"
+    P,
+    //% block="Q"
+    Q,
+    //% block="R"
+    R,
+    //% block="S"
+    S,
+    //% block="T"
+    T,
+    //% block="U"
+    U,
+    //% block="V"
+    V,
+    //% block="W"
+    W,
+    //% block="X"
+    X,
+    //% block="Y"
+    Y,
+    //% block="Z"
+    Z
 }
-
 enum MorseSignal {
     //% block="•"
     Dot,
@@ -22,6 +59,8 @@ enum MorseSignal {
     Dash,
 }
 
+//% color=#000080 icon="\uf086" block="Morse Code"
+//% groups=['Morse signal', 'Morse character']
 namespace morseCode {
     const _characters = {
         A: [MorseSignal.Dot, MorseSignal.Dash],
@@ -55,24 +94,83 @@ namespace morseCode {
     /**
      * Check if signal is a dash or a dot
      */
-    //% color=190 block="is %s | a %compareto | ?"
+    //% color=190 block="%s | is %compareto | ?"
+    //% group="Morse signal"
     export function isDashOrDot(s: Number, compareto: MorseSignal ) : boolean {
-        return true
+        if (s == compareto) {
+            return true
+        } else {
+            return false
+        }
     }
     /**
      * Get a Morse character
      */
     //% blockId="MorseCharacterGetBlock" color=190 block="Morse %mchar"
+    //% group="Morse character"
     export function _get(mchar: MorseCharacter): MorseSignal[] {
-        // TODO
-        return _characters.A;
+        switch (mchar) {
+            case MorseCharacter.A:
+                return _characters.A;
+            case MorseCharacter.B:
+                return _characters.B;
+            case MorseCharacter.C:
+                return _characters.C;
+            case MorseCharacter.D:
+                return _characters.D;
+            case MorseCharacter.E:
+                return _characters.E;
+            case MorseCharacter.F:
+                return _characters.F;
+            case MorseCharacter.G:
+                return _characters.G;
+            case MorseCharacter.H:
+                return _characters.H;
+            case MorseCharacter.I:
+                return _characters.I;
+            case MorseCharacter.J:
+                return _characters.J;
+            case MorseCharacter.K:
+                return _characters.K;
+            case MorseCharacter.L:
+                return _characters.L;
+            case MorseCharacter.M:
+                return _characters.M;
+            case MorseCharacter.N:
+                return _characters.N;
+            case MorseCharacter.O:
+                return _characters.O;
+            case MorseCharacter.P:
+                return _characters.P;
+            case MorseCharacter.Q:
+                return _characters.Q;
+            case MorseCharacter.R:
+                return _characters.R;
+            case MorseCharacter.S:
+                return _characters.S;
+            case MorseCharacter.T:
+                return _characters.T;
+            case MorseCharacter.U:
+                return _characters.U;
+            case MorseCharacter.V:
+                return _characters.V;
+            case MorseCharacter.W:
+                return _characters.W;
+            case MorseCharacter.X:
+                return _characters.X;
+            case MorseCharacter.Y:
+                return _characters.Y;
+            case MorseCharacter.Z:
+                return _characters.Z;
+        }
+        return null;
     }
-
 
     /**
      * Represents a Morse signal block
      */
     //% color=190 block="%signal"
+    //% group="Morse signal"
     export function _signal(signal: MorseSignal): MorseSignal {
         return signal;
     }
@@ -95,119 +193,119 @@ namespace morseCode {
     //% color=190 block="convert %s to list of Morse characters"
     //% blockSetVariable="Morse char list"
     export function stringToMorseArray(s: string): MorseSignal[][] {
-        let word: MorseSignal[][] = [];
+        let word2: MorseSignal[][] = [];
 
         const chars = s.split('');
         chars.forEach(function (c, i) {
             switch (c) {
                 case 'A':
                 case 'a':
-                    word.push(_characters.A);
+                    word2.push(_characters.A);
                     break;
                 case 'B':
                 case 'b':
-                    word.push(_characters.B);
+                    word2.push(_characters.B);
                     break;
                 case 'C':
                 case 'c':
-                    word.push(_characters.C);
+                    word2.push(_characters.C);
                     break;
                 case 'D':
                 case 'd':
-                    word.push(_characters.D);
+                    word2.push(_characters.D);
                     break;
                 case 'E':
                 case 'e':
-                    word.push(_characters.E);
+                    word2.push(_characters.E);
                     break;
                 case 'F':
                 case 'f':
-                    word.push(_characters.F);
+                    word2.push(_characters.F);
                     break;
                 case 'G':
                 case 'g':
-                    word.push(_characters.G);
+                    word2.push(_characters.G);
                     break;
                 case 'H':
                 case 'h':
-                    word.push(_characters.H);
+                    word2.push(_characters.H);
                     break;
                 case 'I':
                 case 'i':
-                    word.push(_characters.I);
+                    word2.push(_characters.I);
                     break;
                 case 'J':
                 case 'j':
-                    word.push(_characters.J);
+                    word2.push(_characters.J);
                     break;
                 case 'K':
                 case 'k':
-                    word.push(_characters.K);
+                    word2.push(_characters.K);
                     break;
                 case 'L':
                 case 'l':
-                    word.push(_characters.L);
+                    word2.push(_characters.L);
                     break;
                 case 'M':
                 case 'm':
-                    word.push(_characters.M);
+                    word2.push(_characters.M);
                     break;
                 case 'N':
                 case 'n':
-                    word.push(_characters.N);
+                    word2.push(_characters.N);
                     break;
                 case 'O':
                 case 'o':
-                    word.push(_characters.O);
+                    word2.push(_characters.O);
                     break;
                 case 'P':
                 case 'p':
-                    word.push(_characters.P);
+                    word2.push(_characters.P);
                     break;
                 case 'Q':
                 case 'q':
-                    word.push(_characters.Q);
+                    word2.push(_characters.Q);
                     break;
                 case 'R':
                 case 'r':
-                    word.push(_characters.R);
+                    word2.push(_characters.R);
                     break;
                 case 'S':
                 case 's':
-                    word.push(_characters.S);
+                    word2.push(_characters.S);
                     break;
                 case 'T':
                 case 't':
-                    word.push(_characters.T);
+                    word2.push(_characters.T);
                     break;
                 case 'U':
                 case 'u':
-                    word.push(_characters.U);
+                    word2.push(_characters.U);
                     break;
                 case 'V':
                 case 'v':
-                    word.push(_characters.V);
+                    word2.push(_characters.V);
                     break;
                 case 'W':
                 case 'w':
-                    word.push(_characters.W);
+                    word2.push(_characters.W);
                     break;
                 case 'X':
                 case 'x':
-                    word.push(_characters.X);
+                    word2.push(_characters.X);
                     break;
                 case 'Y':
                 case 'y':
-                    word.push(_characters.Y);
+                    word2.push(_characters.Y);
                     break;
                 case 'Z':
                 case 'z':
-                    word.push(_characters.Z);
+                    word2.push(_characters.Z);
                     break;
             }
         });
 
-        return word;
+        return word2;
     }
 
     /**
