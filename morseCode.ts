@@ -62,6 +62,18 @@ enum MorseSignal {
 //% color=#000080 icon="\uf086" block="Morse Code"
 //% groups=['Morse signal', 'Morse character']
 namespace morseCode {
+
+    /**
+    * Convert an array of Morse characters to an array of Morse Characters
+    */
+    //% color=#000080 block="convert %s to list of Morse signals"
+    //% s.shadow="MorseCharacterGetBlock"
+    //% blockSetVariable="Morse signal list"
+    //% group="Morse signal"
+    export function MorseCharToMorseSignalArray(s: MorseSignal[]): MorseSignal[] {
+        return s
+    }
+
     const _characters = {
         A: [MorseSignal.Dot, MorseSignal.Dash],
         B: [MorseSignal.Dash, MorseSignal.Dot, MorseSignal.Dot, MorseSignal.Dot],
@@ -106,7 +118,7 @@ namespace morseCode {
     /**
      * Get a Morse character
      */
-    //% blockId="MorseCharacterGetBlock" color=#000080 block="Morse %mchar"
+    //% blockId="MorseCharacterGetBlock" color=190 block="Morse %mchar"
     //% group="Morse character"
     export function _get(mchar: MorseCharacter): MorseSignal[] {
         switch (mchar) {
@@ -178,7 +190,7 @@ namespace morseCode {
     /**
      * Create a Morse word from an array of Morse Characters
      */
-    //% color=#000080 block="Morse word from %mchars"
+    //% color=190 block="%mchars"
     //% mchars.shadow="lists_create_with"
     //% mchars.defl="MorseCharacterGetBlock"
     //% blockSetVariable="Morse char list"
@@ -190,7 +202,7 @@ namespace morseCode {
     /**
      * Convert a string to an array of Morse Characters
      */
-    //% color=#000080 block="convert %s to list of Morse characters"
+    //% color=190 block="convert %s to list of Morse characters"
     //% blockSetVariable="Morse char list"
     export function stringToMorseArray(s: string): MorseSignal[][] {
         let word2: MorseSignal[][] = [];
@@ -308,14 +320,5 @@ namespace morseCode {
         return word2;
     }
 
-    /**
-     * Convert an array of Morse characters to an array of Morse Characters
-     */
-    //% color=190 block="convert %s to list of Morse signals"
-    //% s.shadow="MorseCharacterGetBlock"
-    //% blockSetVariable="Morse signal list"
-    //% group="Morse signal"
-    export function MorseCharToMorseSignalArray(s: MorseSignal[]): MorseSignal[] {
-        return s
-    }
+
 }
